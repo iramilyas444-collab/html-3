@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapphire Clone</title>
+  <style>
+    /* ---------- General ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ---------- Header ---------- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f4f4f4;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .shop-btn {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    /* ---------- Products Grid ---------- */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      background: #fff;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 10px;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .product-info p {
+      color: #777;
+    }
+
+    /* ---------- Overlay ---------- */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: flex-end;
+      z-index: 1000;
+    }
+
+    .overlay.active {
+      display: flex;
+    }
+
+    .drawer {
+      background: #fff;
+      width: 300px;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .drawer-header h3 {
+      font-size: 20px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ---------- Header ---------- -->
+  <header class="header">
+    <div class="logo">Sapphire Clone</div>
+    <div class="icons">
+      <button onclick="toggleSearch()">
+        <img src="https://img.icons8.com/ios/24/search.png" alt="Search">
+      </button>
+      <button onclick="toggleCart()">
+        <img src="https://img.icons8.com/ios/24/shopping-cart.png" alt="Cart">
+      </button>
+      <button class="menu-btn" onclick="toggleMenu()">
+        <img src="https://img.icons8.com/ios/24/menu.png" alt="Menu">
+      </button>
+    </div>
+  </header>
+
+  <!-- ---------- Hero Section ---------- -->
+  <section class="hero">
+    <h2>New Collection</h2>
+    <p>Discover the latest trends</p>
+    <button class="shop-btn">Shop Now</button>
+  </section>
+
+  <!-- ---------- Products Section ---------- -->
+  <section class="products" id="products">
+    <!-- Products will be generated dynamically by JS -->
+  </section>
+
+  <!-- ---------- Cart Drawer ---------- -->
+  <div class="overlay" id="cartOverlay">
+    <div class="drawer">
+      <div class="drawer-header">
+        <h3>Your Cart</h3>
+        <button onclick="toggleCart()">✖</button>
+      </div>
+      <p>No items in the cart.</p>
+    </div>
+  </div>
+
+  <!-- ---------- Search Drawer ---------- -->
+  <div class="overlay" id="searchOverlay">
+    <div class="drawer">
+      <div class="drawer-header">
+        <h3>Search</h3>
+        <button onclick="toggleSearch()">✖</button>
+      </div>
+      <input type="text" placeholder="Search products..." class="search-input">
+    </div>
+  </div>
+
+  <script>
+    // ---------- Generate Products ----------
+    document.addEventListener("DOMContentLoaded", () => {
+      const productsContainer = document.getElementById("products");
+
+      for (let i = 1; i <= 8; i++) {
+        const product = document.createElement("div");
+        product.classList.add("product-card");
+        product.innerHTML = `
+          <img src="https://picsum.photos/200/200?random=${i}" alt="Product ${i}">
+          <div class="product-info">
+            <h3>Product ${i}</h3>
+            <p>$29.99</p>
+          </div>
+        `;
+        productsContainer.appendChild(product);
+      }
+    });
+
+    // ---------- Toggle Drawers ----------
+    function toggleCart() {
+      document.getElementById("cartOverlay").classList.toggle("active");
+    }
+
+    function toggleSearch() {
+      document.getElementById("searchOverlay").classList.toggle("active");
+    }
+
+    function toggleMenu() {
+      alert("Mobile menu will be added here!");
+    }
+  </script>
+</body>
+</html>

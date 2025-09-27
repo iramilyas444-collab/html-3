@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1200"> 
   <title>Nordic Rose</title>
   <style>
     body {
       font-family: Georgia, serif;
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
       background: #fff;
       color: #111;
       line-height: 1.6;
+      width: 1200px; 
     }
-    /* Header */
+
+    
     header {
       display: flex;
       justify-content: space-between;
@@ -22,7 +24,7 @@
       border-bottom: 1px solid #ddd;
     }
     header h1 {
-      font-size: 22px;
+      font-size: 28px;
       letter-spacing: 2px;
     }
     nav a {
@@ -30,29 +32,30 @@
       text-decoration: none;
       color: black;
       font-weight: 500;
+      font-size: 16px;
     }
 
-    /* Hero */
     .hero {
       text-align: center;
-      padding: 50px 20px;
-      max-width: 800px;
+      padding: 60px 20px;
+      max-width: 900px;
       margin: auto;
     }
     .hero h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 36px;
+      margin-bottom: 20px;
     }
     .hero p {
       color: #444;
-      font-size: 15px;
+      font-size: 18px;
     }
     
-    /* Content */
+    
     .content {
-      max-width: 700px;
+      max-width: 900px;
       margin: auto;
-      padding: 20px;
+      padding: 40px;
+      font-size: 18px;
     }
     .author {
       display: flex;
@@ -60,16 +63,14 @@
       margin-bottom: 20px;
     }
     .author img {
-      width: 40px;
+      width: 50px;
       border-radius: 50%;
       margin-right: 10px;
     }
-    .author small {
-      color: #666;
-    }
+    
     h3 {
       margin-top: 40px;
-      font-size: 20px;
+      font-size: 22px;
     }
     .content img {
       width: 100%;
@@ -80,10 +81,10 @@
       margin: 20px 0;
     }
     ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    /* Share */
+   
     .share {
       display: flex;
       justify-content: center;
@@ -92,26 +93,26 @@
     }
     .share a {
       text-decoration: none;
-      padding: 8px 15px;
+      padding: 10px 18px;
       border: 1px solid #ccc;
       color: black;
-      font-size: 14px;
+      font-size: 15px;
     }
     .tags {
       text-align: center;
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 15px;
       color: #555;
     }
     .author-bio {
       text-align: center;
       margin: 40px auto;
-      max-width: 600px;
-      font-size: 14px;
+      max-width: 700px;
+      font-size: 15px;
       color: #444;
     }
 
-    /* Divider 👀 */
+    
     .divider {
       border-top: 1px solid #ccc;
       margin: 50px auto 30px;
@@ -126,10 +127,10 @@
       transform: translateX(-50%);
       background: #fff;
       padding: 0 10px;
-      font-size: 22px;
+      font-size: 24px;
     }
 
-    /* Read next */
+  
     .read-next {
       text-align: center;
       margin: 40px auto;
@@ -137,11 +138,11 @@
     }
     .read-next h2 {
       margin-bottom: 30px;
-      font-size: 24px;
+      font-size: 26px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .grid div {
@@ -154,37 +155,37 @@
       margin-bottom: 10px;
     }
 
-    /* Newsletter */
     .newsletter {
       border: 1px solid #ccc;
       padding: 30px;
       text-align: center;
-      max-width: 600px;
+      max-width: 800px;
       margin: 60px auto;
     }
     .newsletter h3 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 20px;
     }
     .newsletter p {
-      font-size: 14px;
+      font-size: 15px;
       color: #555;
     }
     .newsletter input {
-      padding: 10px;
+      padding: 12px;
       width: 70%;
       margin-top: 15px;
-      border: 1px solid #aaa;
+      border: 1px solid rgb(118, 110, 110);
     }
     .newsletter button {
-      padding: 11px 20px;
+      padding: 12px 22px;
       border: none;
       background: black;
       color: white;
       cursor: pointer;
       font-weight: bold;
+      margin-left: 10px;
     }
 
-    /* Footer */
     footer {
       background: black;
       color: white;
@@ -194,20 +195,19 @@
     footer p {
       max-width: 700px;
       margin: 15px auto;
-      font-size: 14px;
+      font-size: 15px;
       color: #ccc;
     }
     footer a {
       color: white;
       text-decoration: none;
       margin: 0 10px;
-      font-size: 14px;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>NORDIC ROSE</h1>
     <nav>
@@ -218,33 +218,29 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h2>A few words about this blog platform, Ghost, and how this site was made</h2>
     <p>Why Ghost (& Figma) instead of Medium, WordPress or other options?</p>
   </section>
 
-  <!-- Content -->
+  
   <section class="content">
     <div class="author">
       <img src="./html/image 2.png" alt="author">
-      <div>
-        <strong>Mika Matikainen</strong><br>
-        <small>Apr 16, 2020 • 4 min read</small>
-      </div>
     </div>
 
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. </p>
-<P>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra.</p>
+    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus.</p>
+    
     <h3>Next on the pipeline</h3>
-    <p>Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
- </p>
-    <p>Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla..</p>
+    <p>Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra.</p>
+    
+    <p>Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla.</p>
 
-    <img src="/html/Rectangle 8.png" alt="statue">
-<P>Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. 
+    <img src="./html/Rectangle 8.png" alt="statue">
+  
+    <p>Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula.</p>
 
-In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, auctor nisl et, consequat ante. Donec sit amet nisi arcu. Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. Nulla non volutpat leo.</P>
     <ul>
       <li>First item in the list</li>
       <li>Second item in the list lorem ipsum dolor sit amet</li>
@@ -253,7 +249,7 @@ In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, a
 
     <p>Thanks for reading,<br>Mika</p>
 
-    <!-- Share -->
+   
     <div class="share">
       <a href="#">Share on Facebook</a>
       <a href="#">Share on Twitter</a>
@@ -266,41 +262,40 @@ In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, a
     </div>
   </section>
 
-  <!-- Divider -->
   <div class="divider"></div>
 
-  <!-- Read Next -->
+  
   <div class="read-next">
     <h2>What to read next</h2>
     <div class="grid">
       <div>
-        <img src="https://via.placeholder.com/300x200" alt="">
+        <img src="./html/Rectangle 4.png" alt="">
         <p>Connecting artificial intelligence with digital product design</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300x200" alt="">
+        <img src="./html/Rectangle 11.png" alt="">
         <p>Hello world, or, in other words, why this blog exists</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300x200" alt="">
+        <img src="./html/Rectangle 10.png" alt="">
         <p>Here are some things you should know regarding how we work</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300x200" alt="">
+        <img src="./html/Rectangle 37.png" alt="">
         <p>A few words about this blog platform, Ghost, and how this site was made</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300x200" alt="">
+        <img src="./html/Rectangle 39.png" alt="">
         <p>Updating list of 50+ sources on distributed teams, remote work...</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300x200" alt="">
+        <img src="./html/Rectangle 38.png" alt="">
         <p>How modern remote working tools got along with Old School Cowboy’s methods</p>
       </div>
     </div>
   </div>
 
-  <!-- Newsletter -->
+ 
   <div class="newsletter">
     <h3>Sign up for the newsletter</h3>
     <p>If you want relevant updates occasionally, sign up for the private newsletter. Your email is never shared.</p>
@@ -308,7 +303,7 @@ In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, a
     <button>SIGN UP</button>
   </div>
 
-  <!-- Footer -->
+
   <footer>
     <p>NORDIC ROSE</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur.</p>
@@ -319,6 +314,6 @@ In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, a
     </div>
     <p>© 2019–2020 Nordic Rose Co. All rights reserved.</p>
   </footer>
-
+  
 </body>
 </html>

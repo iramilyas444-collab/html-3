@@ -1,0 +1,26 @@
+div{
+    height: 200px;
+    width: 200px;
+    margin: 30px;
+    padding: 30px;
+    display: inline-block;
+}
+/* #box1{
+    height: 100px;
+    width: 200px;
+   font-size: 20px;
+    background-color: darkslategrey;
+}
+#box2{
+    height: 50px; 
+    width: 30%;
+    margin-left: 10%;
+    background-color: grey;
+    font-size: 1em;
+    width: 3em;
+} */
+#box1{
+    background-image:url(/html/Rectangle\ 38.png);
+
+    background-size: contain;
+}
